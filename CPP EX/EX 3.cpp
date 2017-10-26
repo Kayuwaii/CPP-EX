@@ -48,7 +48,7 @@ void case2_driversLicense();
 void case3_EvenOrOdd();
 void case4_Divisible7();
 void case5_equilater();
-void cas6_matchwINNER
+void cas6_matchwINNER();
 //We are forward declaring the methods, so they are in scope everywere in the code. 
 #pragma endregion
 
@@ -56,7 +56,7 @@ int main()
 {
 	bool right_in = false; //Boolean to manage the menu repettition
 	int sel; //Declare an empty integer. It will hold the user selection later.
-	
+
 	while (!right_in) //While the input is not valid repeat the block. 
 	{
 		menu(); //Execute the menu method. It prints every option that the menu has.
@@ -85,6 +85,10 @@ int main()
 		case 5:
 			case5_equilater();
 			break;
+		case 6:
+			cas6_matchwINNER();
+			break;
+		case 7:
 		}
 	}
 	return 0;
@@ -138,8 +142,7 @@ void case1_checkIfPassed()
 			cout << "That's not a proper grade." << endl;
 			checker = false;
 		}
-	}
-	while (!checker);
+	} while (!checker);
 }
 
 void case2_driversLicense()
@@ -162,10 +165,11 @@ void case3_EvenOrOdd()
 	cout << "\n\tInput a number:\t";
 	int num;
 	cin >> num;
-	if (num%2==0)
+	if (num % 2 == 0)
 	{
 		cout << "It's even!" << endl;
-	}else
+	}
+	else
 	{
 		cout << "It's odd!" << endl;
 	}
@@ -197,11 +201,33 @@ void case5_equilater()
 	cout << "\n\tInput the last side of the triangle:\t";
 	int side3;
 	cin >> side3;
-	if ( side1 == side2 && side2 == side3)
+	if (side1 == side2 && side2 == side3)
 	{
 		cout << "It's equilater" << endl;
+	}
+	else
+	{
+		cout << "It's equilater" << endl;
+	}
+}
+
+void cas6_matchwINNER()
+{
+	cout << "\n\tInput the score of the first team:\t";
+	int team1Score;
+	cin >> team1Score;
+	cout << "\n\tInput the score of the second team:\t";
+	int team2Score;
+	cin >> team2Score;
+	if (team1Score > team2Score)
+	{
+		cout << "The first team won!!!!!" << endl;
+	}
+	else if (team1Score < team2Score)
+	{
+		cout << "The second team won!!!!!" << endl;
 	}else
 	{
-		cout << "It's equilater" << endl;
+		cout << "The match ended in a draw" << endl;
 	}
 }
