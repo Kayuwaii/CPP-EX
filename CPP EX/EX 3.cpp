@@ -49,8 +49,11 @@ void case3_EvenOrOdd();
 void case4_Divisible7();
 void case5_equilater();
 void cas6_matchwINNER();
+void case7_biggerNum();
 //We are forward declaring the methods, so they are in scope everywere in the code. 
 #pragma endregion
+
+
 
 int main()
 {
@@ -89,6 +92,7 @@ int main()
 			cas6_matchwINNER();
 			break;
 		case 7:
+			case7_biggerNum();
 		}
 	}
 	return 0;
@@ -180,11 +184,11 @@ void case4_Divisible7()
 	cout << "\n\tInput a number:\t";
 	int num;
 	cin >> num;
-	if (num % 7 == 0)
+	if (num % 7 == 0) //If the number divided by 7 leaves 0 as reminder
 	{
 		cout << "It's divisible by 7!" << endl;
 	}
-	else
+	else //Any other result
 	{
 		cout << "It's not divisible by 7!" << endl;
 	}
@@ -201,11 +205,11 @@ void case5_equilater()
 	cout << "\n\tInput the last side of the triangle:\t";
 	int side3;
 	cin >> side3;
-	if (side1 == side2 && side2 == side3)
+	if (side1 == side2 && side2 == side3) //If every side is the same lenght
 	{
 		cout << "It's equilater" << endl;
 	}
-	else
+	else //Any other result
 	{
 		cout << "It's equilater" << endl;
 	}
@@ -219,15 +223,38 @@ void cas6_matchwINNER()
 	cout << "\n\tInput the score of the second team:\t";
 	int team2Score;
 	cin >> team2Score;
-	if (team1Score > team2Score)
+	if (team1Score > team2Score) //Check if the first int is bigger than the second
 	{
 		cout << "The first team won!!!!!" << endl;
 	}
-	else if (team1Score < team2Score)
+	else if (team1Score < team2Score)//Check if the second int is bigger than the first
 	{
 		cout << "The second team won!!!!!" << endl;
-	}else
+	}else //Any other result.
 	{
 		cout << "The match ended in a draw" << endl;
+	}
+}
+
+//This case is almost identic to the previous one.
+void case7_biggerNum() 
+{
+	cout << "\n\tInput the first number:\t";
+	int num1;
+	cin >> num1;
+	cout << "\n\tInput the second number:\t";
+	int num2;
+	cin >> num2;
+	if (num1 > num2)
+	{
+		cout << to_string(num1) + " is bigger than " + to_string(num2) << endl;
+	}
+	else if (num1 < num2)
+	{
+		cout << num2 + " is bigger than " + num1 << endl;
+	}
+	else
+	{
+		cout << "They're both the same. Don't try to fool me." << endl;
 	}
 }
